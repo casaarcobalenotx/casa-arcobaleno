@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
+import { GoogleAdsTag } from "@/components/GoogleAdsTag";
 import { Header } from "@/components/Header";
 import { site } from "@/lib/site-data";
 
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className="font-sans antialiased">
+        <GoogleAdsTag />
         <Header />
         <main className="page-fade">{children}</main>
         <Footer />

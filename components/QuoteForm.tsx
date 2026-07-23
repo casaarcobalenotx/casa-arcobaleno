@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { reportQuoteRequestConversion } from "@/lib/google-ads";
 import { services } from "@/lib/site-data";
 
 type FormState = "idle" | "loading" | "success" | "error";
@@ -29,6 +30,7 @@ export function QuoteForm() {
       }
 
       form.reset();
+      reportQuoteRequestConversion();
       setState("success");
       setMessage("Thank you for contacting Casa Arcobaleno. We have received your inquiry and will be in touch soon.");
     } catch (error) {
